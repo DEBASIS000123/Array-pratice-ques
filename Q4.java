@@ -1,35 +1,31 @@
-package Array_2D;
 import java.util.Scanner;
 public class Q4 {
-
+	public static void min(int a[]) {
+		int min=a[0];
+		
+		for(int i=1;i<a.length;i++) {
+			if (a[i]<min) 
+				 min=a[i];
+		}
+		System.out.println("The smallest number present in array is :"+min);
+	}
 	public static void main(String[] args) {
-		// sum of numbers in each columns
+		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter the number of rows and columns :");
-		int r=sc.nextInt();
-		int c=sc.nextInt();
-		int arr[][]=new int [r][c];
-		System.out.println("Enter array elements :");
-		for(int i=0;i<arr.length;i++) {
-			for(int j=0;j<arr.length;j++) {
-				arr [i][j]=sc.nextInt();
-			}
+		System.out.println("Enter the size of array:");
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		System.out.println("Enter the array elements :");
+		for(int i=0;i<n;i++) {
+			arr[i]=sc.nextInt();
 		}
-		for(int i=0;i<arr[0].length;i++) {
-			int sum=0;
-			for(int j=0;j<arr.length;j++) {
-				sum+=arr[j][i];
-			}
-			System.out.println("Sum of column "+i+" = "+sum);
+		
+		System.out.println("The array element are :");
+		for(int j:arr) {
+			System.out.print(j+" ");
 		}
-		System.out.println("The matrix is :");
-		for(int i=0;i<arr.length;i++) {
-			for(int j=0;j<arr.length;j++) {
-				System.out.print(arr[i][j]+" ");
-			}
-			System.out.println();
-		}
-				
+		System.out.println();
+		min(arr);
 	}
 
 }

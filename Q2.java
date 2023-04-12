@@ -1,38 +1,34 @@
-package Array_2D;
 import java.util.Scanner;
 public class Q2 {
-//2nd type array input
+	
+	public static boolean isprime(int a) {
+		for(int i=2;i<=Math.sqrt(a);i++) {
+			if(a%i==0)
+				return false;
+		}
+		return true;
+		
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Enter the number of rows :");
-		int r=sc.nextInt();
-		int arr[][]=new int [r][];
-		for(int i=0;i<r;i++) {
-			System.out.println("Input the size of a["+i+"] :");
-			int n=sc.nextInt();
-			arr[i]=new int[n];
+		System.out.println("Enter the size of array");
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		int c=0;
+		for(int i=0;i<n;i++) {
+			arr[i]=(int)(Math.random()*(100-1)+1);
+			if(isprime(arr[i]))
+				c++;
 		}
-			input(arr);
-			display(arr);
+		System.out.println("Array element are: ");
+		for(int a:arr) {
+			System.out.print(a+" ");
+		}
+		System.out.println();
+		System.out.println("No of prime numbers present in array is :"+c);
 		
-	}
-		public static void input(int a[][]) {
-			Scanner sc=new Scanner(System.in); 
-			System.out.println("Enter the array elements :");
-			for(int i=0;i<a.length;i++) {
-				for(int j=0;j<a[i].length;j++) {
-					a[i][j]=sc.nextInt();
-				}
-			}
-		}
-		public static void display(int a[][]) {
-			for(int i=0;i<a.length;i++) {
-				for(int j=0;j<a[i].length;j++) {
-					System.out.print(a[i][j]+"\t");
-				}
-			System.out.println();
-		}
+		
 	}
 
 }
